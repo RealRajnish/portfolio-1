@@ -4,15 +4,16 @@ import { useRef } from "react";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Button from "./button";
+import useProjectModal from "@/hooks/useProjectModal";
 
-type ProjectProps = (typeof projectsData)[number];
+type ProjectProps = {
+  project: (typeof projectsData)[number];
+  id: number;
+};
 
-export default function Project({
-  title,
-  description,
-  tags,
-  imageUrl,
-}: ProjectProps) {
+export default function Project({ project, id }: ProjectProps) {
+  const { title, description, tags, imageUrl, link } = project;
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -20,6 +21,12 @@ export default function Project({
   });
   const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const { onOpen, setId } = useProjectModal();
+
+  const handleClick = (id: number) => {
+    onOpen();
+    setId(id);
+  };
 
   return (
     <motion.div
@@ -46,9 +53,12 @@ export default function Project({
               </li>
             ))}
           </ul>
+          <button className="sm:hidden" onClick={() => handleClick(id)}>
+            Learn more...
+          </button>
         </div>
 
-        <Image
+        {/* <Image
           src={imageUrl}
           alt="Project I worked on"
           quality={95}
@@ -64,7 +74,30 @@ export default function Project({
         group-even:group-hover:rotate-2
 
         group-even:right-[initial] group-even:-left-40"
-        />
+        /> */}
+        <div
+          className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
+        transition 
+        group-hover:scale-[1.04]
+        group-hover:-translate-x-3
+        group-hover:translate-y-3
+        group-hover:-rotate-2
+
+        group-even:group-hover:translate-x-3
+        group-even:group-hover:translate-y-3
+        group-even:group-hover:rotate-2
+
+        group-even:right-[initial] group-even:-left-40"
+        >
+          <Image src={imageUrl} alt="Project I worked on" quality={95} />
+          <button
+            onClick={() => handleClick(id)}
+            className="dark:text-white/70 absolute top-[50%] group-odd:left-3/4 group-hover:translate-x-[-250%] group-even:right-3/4 group-even:group-hover:translate-x-[250%] transition z-10 bg-red-500"
+          >
+            learn more..
+          </button>
+          {/* <Button>Learn more..</Button> */}
+        </div>
       </section>
     </motion.div>
   );

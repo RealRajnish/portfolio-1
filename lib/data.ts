@@ -4,7 +4,7 @@ import { LuGraduationCap } from "react-icons/lu";
 // import corpcommentImg from "@/public/corpcomment.png";
 // import rmtdevImg from "@/public/rmtdev.png";
 // import wordanalyticsImg from "@/public/wordanalytics.png";
-import cutepetFrontend from '@/public/cutepetFrontend.png'
+import cutepetFrontend from '@/public/assets/projects/1/image1.png'
 
 export const links = [
   {
@@ -47,11 +47,12 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "CutePets",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+      "Its a kind of fullstack e-commerce web app which i made during my graduation as a project focused on shopping pets online.",
+    tags: ["React", "Express", "MongoDB", "Styled-components"],
     imageUrl: cutepetFrontend,
+    link:'https://rj-cutepets.cyclic.app/'
   },
   {
     title: "rmtDev",
@@ -59,6 +60,7 @@ export const projectsData = [
       "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
     tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
     imageUrl: cutepetFrontend,
+    link:''
   },
   {
     title: "Word Analytics",
@@ -66,6 +68,7 @@ export const projectsData = [
       "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
     tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
     imageUrl: cutepetFrontend,
+    link:''
   },
 ] as const;
 
@@ -79,14 +82,8 @@ export const skillsData = [
   "Node.js",
   "Git",
   "Tailwind",
-  "Prisma",
   "MongoDB",
   "Redux",
-  "GraphQL",
-  "Apollo",
   "Express",
-  "PostgreSQL",
-  "Python",
-  "Django",
   "Framer Motion",
 ] as const;
