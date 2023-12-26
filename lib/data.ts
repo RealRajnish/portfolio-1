@@ -1,10 +1,6 @@
 import React from "react";
 
 import { LuGraduationCap } from "react-icons/lu";
-// import corpcommentImg from "@/public/corpcomment.png";
-// import rmtdevImg from "@/public/rmtdev.png";
-// import wordanalyticsImg from "@/public/wordanalytics.png";
-import cutepetFrontend from '@/public/assets/projects/1/image1.png'
 
 export const links = [
   {
@@ -42,7 +38,6 @@ export const experiencesData = [
     icon: React.createElement(LuGraduationCap),
     date: "2023",
   },
-  
 ] as const;
 
 export const projectsData = [
@@ -51,24 +46,32 @@ export const projectsData = [
     description:
       "Its a kind of fullstack e-commerce web app which i made during my graduation as a project focused on shopping pets online.",
     tags: ["React", "Express", "MongoDB", "Styled-components"],
-    imageUrl: cutepetFrontend,
-    link:'https://rj-cutepets.cyclic.app/'
+    imageUrl: [
+      "/assets/projects/1/image1.png",
+      "/assets/projects/1/image2.jpg",
+      "/assets/projects/1/image3.jpg",
+      "/assets/projects/1/image4.jpg",
+    ],
+    demoLink: "https://rj-cutepets.cyclic.app",
+    githubLink: "https://github.com/RealRajnish/ignou-project",
+    describe:
+      "Here we are using manual cookies based system for authentication and hashed password are stored for security point of view",
   },
   {
-    title: "rmtDev",
+    title: "Spotify Clone",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: cutepetFrontend,
-    link:''
-  },
-  {
-    title: "Word Analytics",
-    description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: cutepetFrontend,
-    link:''
+      "A bueatiful music player inspired by popular music streaming platform Spotify.",
+    tags: ["React", "NextJs", "TypeScript", "Tailwind CSS"],
+    imageUrl: [
+      "/assets/projects/1/image1.png",
+      "/assets/projects/1/image2.jpg",
+      "/assets/projects/1/image3.jpg",
+      "/assets/projects/1/image4.jpg",
+    ],
+    demoLink: "https://spotify-clone-rj.vercel.app/",
+    githubLink: "https://github.com/RealRajnish/spotify-clone",
+    describe:
+      "It is a beautiful music player app. Here we can upload our songs with their images. Payment system has also been integrated using Stripe. Authentication is implemented using Supabase as database and auth provider.",
   },
 ] as const;
 
