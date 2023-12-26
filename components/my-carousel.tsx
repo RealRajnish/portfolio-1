@@ -1,14 +1,9 @@
 "use client";
+import { imageUrlType } from "@/lib/types";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
-const MyCarousel = ({
-  data,
-}: {
-  data: {
-    image: string;
-  }[];
-}) => {
+const MyCarousel = ({ data }: { data: imageUrlType }) => {
   // State and Ref initialization
   const [currentImg, setCurrentImg] = useState(0);
   const [carouselSize, setCarouselSize] = useState({ width: 0, height: 0 });
@@ -52,12 +47,13 @@ const MyCarousel = ({
                 // className="pointer-events-none"
                 alt={`carousel-image-${i}`}
                 fill
-                src={v.image}
+                src={v}
               />
-              <div>image no. {i}</div>
+              {/* <div>image no. {i}</div> */}
             </div>
           ))}
         </div>
+        {/* Navigation buttons */}
         <button
           disabled={currentImg === 0}
           onClick={() => setCurrentImg((prev) => prev - 1)}
@@ -76,27 +72,6 @@ const MyCarousel = ({
         >
           {">"}
         </button>
-      </div>
-      {/* Navigation buttons */}
-      <div className="flex justify-center mt-3">
-        {/* <button
-          disabled={currentImg === 0}
-          onClick={() => setCurrentImg((prev) => prev - 1)}
-          className={`border px-4 py-2 font-bold z-10 ${
-            currentImg === 0 && "opacity-50"
-          }`}
-        >
-          {"<"}
-        </button>
-        <button
-          disabled={currentImg === data.length - 1}
-          onClick={() => setCurrentImg((prev) => prev + 1)}
-          className={`border px-4 py-2 font-bold z-10 ${
-            currentImg === data.length - 1 && "opacity-50"
-          }`}
-        >
-          {">"}
-        </button> */}
       </div>
     </div>
   );

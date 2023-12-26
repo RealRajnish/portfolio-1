@@ -13,7 +13,7 @@ type ProjectProps = {
 };
 
 export default function Project({ project, id }: ProjectProps) {
-  const { title, description, tags, imageUrl, link } = project;
+  const { title, description, tags, imageUrl } = project;
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -58,23 +58,6 @@ export default function Project({ project, id }: ProjectProps) {
           </button>
         </div>
 
-        {/* <Image
-          src={imageUrl}
-          alt="Project I worked on"
-          quality={95}
-          className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
-        transition 
-        group-hover:scale-[1.04]
-        group-hover:-translate-x-3
-        group-hover:translate-y-3
-        group-hover:-rotate-2
-
-        group-even:group-hover:translate-x-3
-        group-even:group-hover:translate-y-3
-        group-even:group-hover:rotate-2
-
-        group-even:right-[initial] group-even:-left-40"
-        /> */}
         <div
           className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
         transition 
@@ -89,7 +72,13 @@ export default function Project({ project, id }: ProjectProps) {
 
         group-even:right-[initial] group-even:-left-40"
         >
-          <Image src={imageUrl} alt="Project I worked on" quality={95} />
+          <Image
+            src={imageUrl[0]}
+            alt="Project I worked on"
+            width={450}
+            height={450}
+            quality={95}
+          />
           <button
             onClick={() => handleClick(id)}
             className="dark:text-white/70 absolute top-[50%] group-odd:left-3/4 group-hover:translate-x-[-250%] group-even:right-3/4 group-even:group-hover:translate-x-[250%] transition z-10 bg-red-500"
