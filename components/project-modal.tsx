@@ -1,9 +1,9 @@
 import React from "react";
-import clsx from "clsx";
 import Modal from "./modal";
 import useProjectModal from "@/hooks/useProjectModal";
 import MyCarousel from "./my-carousel";
 import { projectsData } from "@/lib/data";
+import Button from "./button";
 
 export default function ProjectModal() {
   const { onClose, isOpen, id } = useProjectModal();
@@ -17,25 +17,30 @@ export default function ProjectModal() {
   return (
     <div>
       <Modal showModal={isOpen} onClose={onClose}>
-        <div className="dark:text-white dark:bg-black/60 p-4 w-[21rem] sm:w-[34rem]">
-          <section className="w-[21rem] sm:w-[34rem] max-h-[20rem] ">
+        <div className="p-1 w-[21rem] sm:w-[34rem]">
+          <section className="w-[21rem] sm:w-[34rem] max-h-[20rem] shadow-2xl ">
             <MyCarousel data={projectsData[id].imageUrl} />
           </section>
-          <p>
-            <span>
+          <div className="flex gap-2 mt-3 mb-2 text-black">
+            <Button>
               <a href={projectsData[id].githubLink} target="_blank">
-                githubLink
+                Source Code
               </a>
-            </span>
-            <span>
+            </Button>
+
+            <Button>
               <a href={projectsData[id].demoLink} target="_blank">
                 Live Demo
               </a>
-            </span>
+            </Button>
+          </div>
+          <h3 className="text-black text-lg font-bold">
+            {projectsData[id].title}
+          </h3>
+          <hr />
+          <p className="max-h-24 sm:max-h-40 overflow-y-auto bg-white text-black p-0.5">
+            {projectsData[id].describe}
           </p>
-          <p>{projectsData[id].describe}</p>
-
-          <p>Info about the project {id} sey</p>
         </div>
       </Modal>
     </div>

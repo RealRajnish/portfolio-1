@@ -31,7 +31,7 @@ const MyCarousel = ({ data }: { data: imageUrlType }) => {
   return (
     <div>
       {/* Carousel container */}
-      <div className="w-[19rem] sm:w-[32rem] h-60 rounded-md overflow-hidden relative">
+      <div className="w-[21rem] sm:w-[34rem] h-60 rounded-md overflow-hidden relative">
         {/* Image container */}
         <div
           ref={carouselRef}
@@ -57,7 +57,7 @@ const MyCarousel = ({ data }: { data: imageUrlType }) => {
         <button
           disabled={currentImg === 0}
           onClick={() => setCurrentImg((prev) => prev - 1)}
-          className={`border px-4 py-2 font-bold z-100 absolute bottom-[6.5rem] left-0 ${
+          className={`border px-4 py-2 font-bold z-10 absolute bottom-[6.5rem] left-0 bg-black/20 ${
             currentImg === 0 && "opacity-50"
           }`}
         >
@@ -66,7 +66,7 @@ const MyCarousel = ({ data }: { data: imageUrlType }) => {
         <button
           disabled={currentImg === data.length - 1}
           onClick={() => setCurrentImg((prev) => prev + 1)}
-          className={`border px-4 py-2 font-bold z-10 absolute bottom-[6.5rem] right-0 ${
+          className={`border px-4 py-2 font-bold z-10 absolute bottom-[6.5rem] right-0 bg-black/20 ${
             currentImg === data.length - 1 && "opacity-50"
           }`}
         >

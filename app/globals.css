@@ -14,3 +14,38 @@ html.dark {
   @apply border border-black/10;
 }
 
+/* button styles start here  */
+.custom-btn {
+  @apply w-[130px] h-10 text-white font-medium cursor-pointer transition-all duration-[0.3s] ease-[ease] relative inline-block shadow-[inset_2px_2px_2px_0px_rgba(255,255,255,0.5),7px_7px_20px_0px_rgba(0,0,0,0.1),4px_4px_5px_0px_rgba(0,0,0,0.1)] px-[25px] py-2.5 rounded-[5px];
+  font-family: "Lato", sans-serif;
+  background: transparent;
+  outline: none;
+}
+
+/* 7 */
+.btn-7 {
+  @apply leading-[42px] p-0 border-[none] before:h-[0%] before:w-0.5 after:w-[0%] after:h-0.5 hover:text-[rgba(251,75,2,1)] hover:before:h-full hover:after:w-full;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 151, 0, 1) 0%,
+    rgba(251, 75, 2, 1) 100%
+  );
+}
+.btn-7 span {
+  @apply relative block w-full h-full before:w-0.5 before:h-[0%] after:h-0.5 after:w-[0%] hover:before:h-full hover:after:w-full;
+}
+.btn-7:before,
+.btn-7:after {
+  @apply absolute content-[""] shadow-[-7px_-7px_20px_0px_rgba(255,255,255,0.9),-4px_-4px_5px_0px_rgba(255,255,255,0.9),7px_7px_20px_0px_rgba(0,0,0,0.2),4px_4px_5px_0px_rgba(0,0,0,0.3)] transition-all duration-[0.3s] ease-[ease] right-0 bottom-0;
+  background: rgba(251, 75, 2, 1);
+}
+.btn-7:hover {
+  background: transparent;
+}
+.btn-7 span:before,
+.btn-7 span:after {
+  @apply absolute content-[""] shadow-[-7px_-7px_20px_0px_rgba(255,255,255,0.9),-4px_-4px_5px_0px_rgba(255,255,255,0.9),7px_7px_20px_0px_rgba(0,0,0,0.2),4px_4px_5px_0px_rgba(0,0,0,0.3)] transition-all duration-[0.3s] ease-[ease] left-0 top-0;
+  background: rgba(251, 75, 2, 1);
+}
+
+/* custom button styles ends here  */
