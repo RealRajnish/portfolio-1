@@ -2,12 +2,13 @@ import React from "react";
 
 type ButtonProps = {
   children: React.ReactNode;
+  onClick?: () => void;
 };
 
-const Button = ({ children }: ButtonProps) => {
+const Button = ({ children, onClick }: ButtonProps) => {
   return (
-    <button className="bg-red-500 right-0 group-odd:left-0  top-1/2">
-      {children}
+    <button className="custom-btn btn-7">
+      <span>{children}</span>
     </button>
   );
 };
