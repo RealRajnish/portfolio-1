@@ -1,6 +1,7 @@
 import React from "react";
 
 import { LuGraduationCap } from "react-icons/lu";
+import { CgWorkAlt } from "react-icons/cg";
 
 export const links = [
   {
@@ -30,6 +31,14 @@ export const links = [
 ] as const;
 
 export const experiencesData = [
+  {
+    title: "Fullstack Web Developer",
+    location: "Atraski India, India",
+    description:
+      "Led MERN stack development for atraski.com and atstay.in, ensuring seamless UI/UX. Proficient in HTML, CSS, JavaScript, React.js, Node.js, Express.js, MongoDB. Integrated Razorpay for secure transactions. Managed WordPress projects, embraced agile methodologies.",
+    icon: React.createElement(CgWorkAlt),
+    date: "Jan 2024 - present",
+  },
   {
     title: "Graduated BCA",
     location: "IGNOU, India",
